@@ -38,8 +38,8 @@
   <header class="relative h-screen overflow-hidden bg-blue-50">
     <!-- Video background -->
     <video playsinline autoplay muted loop poster="https://placehold.co/1200x800/F0F9FF/000?text=Placeholder+Image" class="hero-video">
-      <!-- URL ของวิดีโอจาก Google Drive -->
-      <source src="https://drive.google.com/uc?export=download&id=1ysl2KfH6nYqoxAuCOeA52g8z_6StU_Uq" type="video/mp4">
+      <!-- URL ของวิดีโอที่สามารถใช้ได้จริง -->
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-business-team-in-a-meeting-in-the-office-3844-large.mp4" type="video/mp4">
     </video>
     
     <!-- Dark overlay to improve text readability -->
@@ -47,8 +47,8 @@
     
     <nav class="absolute top-0 left-0 right-0 p-6 z-20 flex justify-between items-center text-white">
       <div class="flex items-center">
-        <!-- URL ของรูปภาพโลโก้จาก Google Drive -->
-        <img src="https://drive.google.com/uc?export=view&id=1ckX7OhgdhKdMcGBm1S49bXKOP1rmt0Vy" alt="Company Logo" class="h-12 w-auto mr-4" />
+        <!-- URL ของรูปภาพโลโก้ที่สามารถใช้ได้จริง -->
+        <img src="https://placehold.co/200x50/F0F9FF/000?text=Your+Logo" alt="Company Logo" class="h-12 w-auto mr-4" />
         <span class="text-xl font-bold">บริษัท มุกดา แอคเค้าน์ติ้ง ซัพพอร์ท จำกัด</span>
       </div>
     </nav>
@@ -138,21 +138,30 @@
       <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">
         เสียงจากลูกค้าของเรา
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="testimonials-container">
         <!-- Testimonial Card 1 -->
         <div class="bg-blue-50 p-8 rounded-lg shadow-md text-center flex flex-col items-center">
           <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center mb-4 text-4xl text-blue-900">👤</div>
-          <p class="italic text-gray-700 mb-4">"ทีมงานมีความเป็นมืออาชีพมาก ช่วยให้การจัดการภาษีของบริษัทเป็นเรื่องง่ายขึ้นเยอะเลยครับ"</p>
+          <p class="italic text-gray-700 mb-4 testimonial-text">"ทีมงานมีความเป็นมืออาชีพมาก ช่วยให้การจัดการภาษีของบริษัทเป็นเรื่องง่ายขึ้นเยอะเลยครับ"</p>
         </div>
         <!-- Testimonial Card 2 -->
         <div class="bg-blue-50 p-8 rounded-lg shadow-md text-center flex flex-col items-center">
           <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center mb-4 text-4xl text-blue-900">👤</div>
-          <p class="italic text-gray-700 mb-4">"บริการรวดเร็วและแม่นยำ ให้คำปรึกษาดีมาก ทำให้มั่นใจในการเงินของธุรกิจมากขึ้นค่ะ"</p>
+          <p class="italic text-gray-700 mb-4 testimonial-text">"บริการรวดเร็วและแม่นยำ ให้คำปรึกษาดีมาก ทำให้มั่นใจในการเงินของธุรกิจมากขึ้นค่ะ"</p>
         </div>
         <!-- Testimonial Card 3 -->
         <div class="bg-blue-50 p-8 rounded-lg shadow-md text-center flex flex-col items-center">
           <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center mb-4 text-4xl text-blue-900">👤</div>
-          <p class="italic text-gray-700 mb-4">"ตั้งแต่ใช้บริการที่ปรึกษาของที่นี่ ธุรกิจของเราเติบโตขึ้นอย่างเห็นได้ชัด ขอแนะนำเลยครับ"</p>
+          <p class="italic text-gray-700 mb-4 testimonial-text">"ตั้งแต่ใช้บริการที่ปรึกษาของที่นี่ ธุรกิจของเราเติบโตขึ้นอย่างเห็นได้ชัด ขอแนะนำเลยครับ"</p>
+        </div>
+      </div>
+      <!-- Gemini API Feature: Summarize testimonials -->
+      <div class="mt-8">
+        <button id="summarize-btn" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105">
+          ✨ สรุปข้อความ
+        </button>
+        <div id="summary-result" class="mt-4 p-6 bg-gray-100 text-gray-800 rounded-lg hidden">
+          <p id="summary-text" class="italic"></p>
         </div>
       </div>
     </div>
@@ -167,7 +176,9 @@
       <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-xl">
         <div class="flex items-center">
           <i data-lucide="map-pin" class="text-red-600 mr-2 w-6 h-6"></i>
-          <span>30 ซอยตาดแคน 12 ถนนตาดแคน ตำบลมุกดาหาร อำเภอเมืองมุกดาหาร จังหวัดมุกดาหาร 49000</span>
+          <a href="https://maps.app.goo.gl/E6PP2XqTK2msS5Dv6" target="_blank" rel="noopener noreferrer" class="hover:underline">
+            <span>30 ซอยตาดแคน 12 ถนนตาดแคน ตำบลมุกดาหาร อำเภอเมืองมุกดาหาร จังหวัดมุกดาหาร 49000</span>
+          </a>
         </div>
         <div class="flex items-center">
           <i data-lucide="phone" class="text-red-600 mr-2 w-6 h-6"></i>
@@ -190,12 +201,72 @@
   </footer>
 
   <script>
-    // Ensure the script runs after the document has loaded to prevent errors
     window.onload = function() {
       // Check if lucide is available before calling createIcons
       if (typeof lucide !== 'undefined') {
         lucide.createIcons();
       }
+
+      // Gemini API Integration for summarizing testimonials
+      const summarizeButton = document.getElementById('summarize-btn');
+      const summaryResult = document.getElementById('summary-result');
+      const summaryText = document.getElementById('summary-text');
+      const testimonials = document.querySelectorAll('.testimonial-text');
+
+      // Function to make API call with exponential backoff
+      const callGeminiAPI = async (prompt, retries = 3, delay = 1000) => {
+        const apiKey = "";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+        const payload = {
+          contents: [{ parts: [{ text: prompt }] }],
+        };
+
+        try {
+          const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (response.status === 429 && retries > 0) {
+            console.warn(`Too many requests. Retrying in ${delay / 1000}s...`);
+            await new Promise(res => setTimeout(res, delay));
+            return callGeminiAPI(prompt, retries - 1, delay * 2);
+          }
+
+          if (!response.ok) {
+            throw new Error(`API call failed with status: ${response.status}`);
+          }
+
+          const result = await response.json();
+          if (result.candidates && result.candidates.length > 0) {
+            return result.candidates[0].content.parts[0].text;
+          } else {
+            console.error('Unexpected API response structure:', result);
+            return 'ขออภัย ไม่สามารถสรุปข้อความได้ในขณะนี้';
+          }
+        } catch (error) {
+          console.error('Error during API call:', error);
+          return 'ขออภัย เกิดข้อผิดพลาดในการเชื่อมต่อ';
+        }
+      };
+
+      summarizeButton.addEventListener('click', async () => {
+        // Collect all testimonial text
+        let combinedText = "ต่อไปนี้คือข้อความรีวิวจากลูกค้าของบริษัทบัญชีในไทย โปรดสรุปเนื้อหาหลักของข้อความเหล่านี้ให้เป็นข้อความสั้นๆ ประมาณ 1-2 ประโยค\n\n";
+        testimonials.forEach((testimonial, index) => {
+          combinedText += `รีวิว ${index + 1}: ${testimonial.textContent.trim()}\n`;
+        });
+        
+        // Show loading indicator
+        summaryResult.classList.remove('hidden');
+        summaryText.textContent = 'กำลังสรุปข้อความ...';
+
+        const summary = await callGeminiAPI(combinedText);
+
+        // Display the summary
+        summaryText.textContent = summary;
+      });
     };
   </script>
 </body>
