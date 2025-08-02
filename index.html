@@ -16,22 +16,39 @@
     body {
       font-family: 'Sarabun', sans-serif;
     }
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      transform: translateX(-50%) translateY(-50%);
+      background-size: cover;
+      background-position: center;
+      background-color: #000;
+    }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-white">
 
-  <!-- Hero Section -->
-  <header class="relative h-screen bg-blue-50">
-    <div 
-      class="absolute inset-0 bg-cover bg-center" 
-      style="background-image: url('https://placehold.co/1200x800/F0F9FF/000?text=Thai+Accountant');"
-    >
-      <div class="absolute inset-0 bg-blue-900 opacity-60"></div>
-    </div>
+  <!-- Hero Section with Video Background -->
+  <header class="relative h-screen overflow-hidden bg-blue-50">
+    <!-- Video background -->
+    <video playsinline autoplay muted loop poster="https://placehold.co/1200x800/F0F9FF/000?text=Placeholder+Image" class="hero-video">
+      <!-- URL ของวิดีโอที่สามารถใช้ได้จริง -->
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-business-team-in-a-meeting-in-the-office-3844-large.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Dark overlay to improve text readability -->
+    <div class="absolute inset-0 bg-blue-900 opacity-60"></div>
     
     <nav class="absolute top-0 left-0 right-0 p-6 z-20 flex justify-between items-center text-white">
       <div class="flex items-center">
-        <img src="https://raw.githubusercontent.com/MUKDAACCOUNTINGSUPPORT/MUKACC/main/MUKDA%20ACCOUNTING%20SUPPORT%20(1).png" alt="Company Logo" class="h-12 w-auto mr-4" />
+        <!-- URL ของรูปภาพโลโก้ที่สามารถใช้ได้จริง -->
+        <img src="https://placehold.co/200x50/F0F9FF/000?text=Your+Logo" alt="Company Logo" class="h-12 w-auto mr-4" />
         <span class="text-xl font-bold">บริษัท มุกดา แอคเค้าน์ติ้ง ซัพพอร์ท จำกัด</span>
       </div>
     </nav>
@@ -44,9 +61,9 @@
         <p class="text-xl md:text-2xl mb-8">
           บริการบัญชี, การเงิน, และประกันภัยที่ครบวงจร เพื่อความสำเร็จของธุรกิจคุณ
         </p>
-        <button class="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105">
+        <a href="https://www.facebook.com/share/1Cz7KAoyVh/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="px-8 py-4 inline-block bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105">
           ติดต่อเรา
-        </button>
+        </a>
       </div>
     </div>
   </header>
@@ -126,24 +143,21 @@
         <div class="bg-blue-50 p-8 rounded-lg shadow-md text-center flex flex-col items-center">
           <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center mb-4 text-4xl text-blue-900">👤</div>
           <p class="italic text-gray-700 mb-4">"ทีมงานมีความเป็นมืออาชีพมาก ช่วยให้การจัดการภาษีของบริษัทเป็นเรื่องง่ายขึ้นเยอะเลยครับ"</p>
-          <p class="font-bold text-lg text-blue-900">คุณสมชาย</p>
         </div>
         <!-- Testimonial Card 2 -->
         <div class="bg-blue-50 p-8 rounded-lg shadow-md text-center flex flex-col items-center">
           <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center mb-4 text-4xl text-blue-900">👤</div>
           <p class="italic text-gray-700 mb-4">"บริการรวดเร็วและแม่นยำ ให้คำปรึกษาดีมาก ทำให้มั่นใจในการเงินของธุรกิจมากขึ้นค่ะ"</p>
-          <p class="font-bold text-lg text-blue-900">คุณธิดา</p>
         </div>
         <!-- Testimonial Card 3 -->
         <div class="bg-blue-50 p-8 rounded-lg shadow-md text-center flex flex-col items-center">
           <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center mb-4 text-4xl text-blue-900">👤</div>
           <p class="italic text-gray-700 mb-4">"ตั้งแต่ใช้บริการที่ปรึกษาของที่นี่ ธุรกิจของเราเติบโตขึ้นอย่างเห็นได้ชัด ขอแนะนำเลยครับ"</p>
-          <p class="font-bold text-lg text-blue-900">คุณชัย</p>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Contact Section -->
   <section id="contact" class="bg-blue-900 text-white py-16 text-center">
     <div class="container mx-auto px-6">
@@ -160,9 +174,9 @@
           <span>064-452-5945</span>
         </div>
       </div>
-      <button class="mt-8 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105">
+      <a href="https://www.facebook.com/share/1Cz7KAoyVh/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="mt-8 px-8 py-4 inline-block bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105">
         ติดต่อเรา
-      </button>
+      </a>
     </div>
   </section>
 
@@ -176,11 +190,13 @@
   </footer>
 
   <script>
-    lucide.createIcons();
+    // Ensure the script runs after the document has loaded to prevent errors
+    window.onload = function() {
+      // Check if lucide is available before calling createIcons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    };
   </script>
 </body>
 </html>
-
-
-
-
