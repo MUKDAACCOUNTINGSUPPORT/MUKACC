@@ -57,7 +57,7 @@
   <!-- Fixed Header with Logo and Company Name -->
   <nav class="fixed-header text-white" id="main-header">
     <div class="logo-container">
-      <img src="https://raw.githubusercontent.com/MUKDAACCOUNTINGSUPPORT/MUKACC/main/mukda-logo1.png" alt="Company Logo" class="h-60 w-auto mr-4" />
+      <img src="mukda-logo1.png" alt="Company Logo" class="h-50 w-auto mr-4" />
       <span class="mt-2 text-xl font-bold">บริษัท มุกดา แอคเค้าน์ติ้ง ซัพพอร์ท จำกัด</span>
     </div>
   </nav>
@@ -79,7 +79,7 @@
           เติบโตอย่างมั่นคงไปกับเรา
         </h1>
         <p class="mb-8 text-xl md:text-2xl">
-          บริการบัญชี, การเงิน, เพื่อความสำเร็จของธุรกิจคุณ
+          บริการบัญชี, การเงิน, และประกันภัยที่ครบวงจร เพื่อความสำเร็จของธุรกิจคุณ
         </p>
         <a href="https://www.facebook.com/share/1Cz7KAoyVh/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 font-bold text-white transition-transform transform bg-red-600 rounded-full shadow-lg hover:bg-red-700 hover:scale-105">
           ติดต่อเรา
@@ -105,7 +105,7 @@
         <div class="p-8 text-center transition-transform transform bg-white rounded-lg shadow-lg hover:scale-105">
           <i data-lucide="file-text" class="w-12 h-12 mx-auto mb-4 text-blue-500"></i>
           <h3 class="mb-2 text-2xl font-bold text-blue-900">ยื่นภาษี</h3>
-          <p class="text-gray-600">จัดการเรื่องภาษีอย่างมืออาชีพ</p>
+          <p class="text-gray-600">จัดการเรื่องภาษีอย่างมืออาชีพ ทั้งภาษีบุคคลธรรมดาและนิติบุคคล</p>
         </div>
         <!-- Service Card 3 -->
         <div class="p-8 text-center transition-transform transform bg-white rounded-lg shadow-lg hover:scale-105">
@@ -212,19 +212,15 @@
 
       const fixedHeader = document.querySelector('.fixed-header');
       
-      // Initially set opacity to 1 if at the top of the page
-      if (window.scrollY === 0) {
-        fixedHeader.style.opacity = 1;
-      } else {
-        fixedHeader.style.opacity = 0;
-      }
+      // Hide the header initially
+      fixedHeader.style.opacity = 0;
 
-      // Hide the header when scrolling down
+      // Show/hide the header based on scroll position
       window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
-          fixedHeader.style.opacity = 0;
-        } else {
           fixedHeader.style.opacity = 1;
+        } else {
+          fixedHeader.style.opacity = 0;
         }
       });
       
