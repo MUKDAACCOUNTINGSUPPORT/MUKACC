@@ -30,28 +30,47 @@
       background-position: center;
       background-color: #000;
     }
+    /* Fixed header with logo at the top */
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(64, 64, 64, 0.7); /* Adjusted to match logo background */
+      z-index: 50;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-white">
+
+  <!-- Fixed Header with Logo and Company Name -->
+  <nav class="fixed-header text-white">
+    <div class="logo-container">
+      <!-- ปรับขนาดโลโก้ให้ใหญ่ขึ้น 3 เท่าจากเดิม -->
+      <img src="https://raw.githubusercontent.com/MUKDAACCOUNTINGSUPPORT/MUKACC/main/mukda-logo1.png" alt="Company Logo" class="h-60 w-auto mr-4" />
+      <span class="text-xl font-bold mt-2">บริษัท มุกดา แอคเค้าน์ติ้ง ซัพพอร์ท จำกัด</span>
+    </div>
+  </nav>
 
   <!-- Hero Section with Video Background -->
   <header class="relative h-screen overflow-hidden bg-blue-50">
     <!-- Video background -->
     <video playsinline autoplay muted loop poster="https://placehold.co/1200x800/F0F9FF/000?text=Placeholder+Image" class="hero-video">
-      <!-- URL ของวิดีโอที่สามารถใช้ได้จริง -->
+      <!-- URL ของวิดีโอที่สามารถใช้ได้จริงบนอินเทอร์เน็ต -->
       <source src="https://assets.mixkit.co/videos/preview/mixkit-business-team-in-a-meeting-in-the-office-3844-large.mp4" type="video/mp4">
     </video>
     
     <!-- Dark overlay to improve text readability -->
     <div class="absolute inset-0 bg-blue-900 opacity-60"></div>
-    
-    <nav class="absolute top-0 left-0 right-0 p-6 z-20 flex justify-between items-center text-white">
-      <div class="flex items-center">
-        <!-- URL ของรูปภาพโลโก้ที่สามารถใช้ได้จริง -->
-        <img src="mukda-logo.png" alt="Company Logo" class="h-12 w-auto mr-4" />
-        <span class="text-xl font-bold">บริษัท มุกดา แอคเค้าน์ติ้ง ซัพพอร์ท จำกัด</span>
-      </div>
-    </nav>
     
     <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
       <div class="p-4 md:p-8 max-w-4xl">
@@ -90,13 +109,13 @@
         <!-- Service Card 3 -->
         <div class="bg-white p-8 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105">
           <i data-lucide="briefcase" class="text-blue-500 mx-auto mb-4 w-12 h-12"></i>
-          <h3 class="text-2xl font-bold mb-2 text-blue-900">ที่ปรึกษาธุรกิจ</h3>
+          <h3 class="2xl font-bold mb-2 text-blue-900">ที่ปรึกษาธุรกิจ</h3>
           <p class="text-gray-600">ให้คำปรึกษาเชิงลึกด้านการเงินและการดำเนินธุรกิจเพื่อการตัดสินใจที่ถูกต้อง</p>
         </div>
         <!-- Service Card 4 -->
         <div class="bg-white p-8 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105">
           <i data-lucide="heart-handshake" class="text-blue-500 mx-auto mb-4 w-12 h-12"></i>
-          <h3 class="text-2xl font-bold mb-2 text-blue-900">ประกันชีวิตและสุขภาพ</h3>
+          <h3 class="2xl font-bold mb-2 text-blue-900">ประกันชีวิตและสุขภาพ</h3>
           <p class="text-gray-600">วางแผนความคุ้มครองที่เหมาะสมเพื่อชีวิตที่มั่นคงและอุ่นใจ</p>
         </div>
       </div>
@@ -113,19 +132,19 @@
         <!-- Feature Card 1 -->
         <div class="bg-white p-8 rounded-lg shadow-md text-center">
           <i data-lucide="check-circle" class="text-red-600 mx-auto mb-4 w-12 h-12"></i>
-          <h3 class="text-2xl font-bold mb-2 text-blue-900">ความเชี่ยวชาญ</h3>
+          <h3 class="2xl font-bold mb-2 text-blue-900">ความเชี่ยวชาญ</h3>
           <p class="text-gray-600">ทีมงานผู้เชี่ยวชาญด้านบัญชีและภาษีที่มีประสบการณ์สูง</p>
         </div>
         <!-- Feature Card 2 -->
         <div class="bg-white p-8 rounded-lg shadow-md text-center">
           <i data-lucide="users" class="text-red-600 mx-auto mb-4 w-12 h-12"></i>
-          <h3 class="text-2xl font-bold mb-2 text-blue-900">ความน่าเชื่อถือ</h3>
+          <h3 class="2xl font-bold mb-2 text-blue-900">ความน่าเชื่อถือ</h3>
           <p class="text-gray-600">เรายึดมั่นในความซื่อสัตย์และความโปร่งใสในการให้บริการ</p>
         </div>
         <!-- Feature Card 3 -->
         <div class="bg-white p-8 rounded-lg shadow-md text-center">
           <i data-lucide="shield" class="text-red-600 mx-auto mb-4 w-12 h-12"></i>
-          <h3 class="text-2xl font-bold mb-2 text-blue-900">บริการครบวงจร</h3>
+          <h3 class="2xl font-bold mb-2 text-blue-900">บริการครบวงจร</h3>
           <p class="text-gray-600">ทุกเรื่องบัญชี การเงิน และประกันภัย จบครบในที่เดียว</p>
         </div>
       </div>
@@ -271,4 +290,3 @@
   </script>
 </body>
 </html>
-
