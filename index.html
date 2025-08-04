@@ -36,7 +36,7 @@
       top: 0;
       left: 0;
       right: 0;
-      background-color: rgba(64, 64, 64, 0.7);
+      background-color: rgba(64, 64, 64, 0.7); /* Adjusted to match logo background */
       z-index: 50;
       padding: 1rem;
       display: flex;
@@ -79,7 +79,7 @@
           เติบโตอย่างมั่นคงไปกับเรา
         </h1>
         <p class="mb-8 text-xl md:text-2xl">
-          บริการบัญชี, การเงิน, เพื่อความสำเร็จของธุรกิจคุณ
+          บริการบัญชี, การเงิน, และประกันภัยที่ครบวงจร เพื่อความสำเร็จของธุรกิจคุณ
         </p>
         <a href="https://www.facebook.com/share/1Cz7KAoyVh/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 font-bold text-white transition-transform transform bg-red-600 rounded-full shadow-lg hover:bg-red-700 hover:scale-105">
           ติดต่อเรา
@@ -130,37 +130,7 @@
         อัตราค่าบริการ
       </h2>
       <div class="mx-auto overflow-x-auto">
-        <table class="w-full text-left bg-white rounded-lg shadow-md md:table-auto">
-          <thead>
-            <tr class="text-gray-600 border-b-2 border-gray-200">
-              <th class="px-4 py-3 font-semibold">รายการ</th>
-              <th class="px-4 py-3 font-semibold">รายละเอียด</th>
-              <th class="px-4 py-3 font-semibold text-right">ราคาต่อเดือน</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-gray-200">
-              <td class="px-4 py-3">ทำบัญชีและยื่นภาษีรายเดือน</td>
-              <td class="px-4 py-3">สำหรับธุรกิจขนาดเล็กและบุคคลธรรมดา</td>
-              <td class="px-4 py-3 text-right">เริ่มต้น 3,000 บาท</td>
-            </tr>
-            <tr class="border-b border-gray-200 bg-gray-50">
-              <td class="px-4 py-3">วางแผนภาษีประจำปี</td>
-              <td class="px-4 py-3">ให้คำปรึกษาและวางแผนภาษีอย่างมีประสิทธิภาพ</td>
-              <td class="px-4 py-3 text-right">เริ่มต้น 5,000 บาท</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="px-4 py-3">ที่ปรึกษาธุรกิจ (รายชั่วโมง)</td>
-              <td class="px-4 py-3">บริการให้คำปรึกษาด้านการเงินและการจัดการ</td>
-              <td class="px-4 py-3 text-right">เริ่มต้น 1,500 บาท</td>
-            </tr>
-            <tr class="bg-gray-50">
-              <td class="px-4 py-3">วางแผนประกันภัย</td>
-              <td class="px-4 py-3">สำหรับประกันชีวิตและประกันสุขภาพส่วนบุคคล</td>
-              <td class="px-4 py-3 text-right">ไม่มีค่าใช้จ่าย</td>
-            </tr>
-          </tbody>
-        </table>
+        <img src="https://placehold.co/800x400/fff/000?text=Pricing+Table+Image" alt="ตารางค่าบริการ" class="w-full mx-auto rounded-lg shadow-md md:w-3/4">
       </div>
     </div>
   </section>
@@ -240,21 +210,16 @@
         lucide.createIcons();
       }
 
+      // Hide the header initially
       const fixedHeader = document.querySelector('.fixed-header');
-      
-      // Initially set opacity to 1 if at the top of the page
-      if (window.scrollY === 0) {
-        fixedHeader.style.opacity = 1;
-      } else {
-        fixedHeader.style.opacity = 0;
-      }
+      fixedHeader.style.opacity = 0;
 
       // Show/hide the header based on scroll position
       window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
-          fixedHeader.style.opacity = 0;
-        } else {
           fixedHeader.style.opacity = 1;
+        } else {
+          fixedHeader.style.opacity = 0;
         }
       });
       
